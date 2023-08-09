@@ -11,28 +11,29 @@ def  clients():
 
 @clients.command()
 @click.option('-n', '--name',
-	    	type='str',
-		    prompt=True,
-		    help='The clien\t name')
-@click.option('-n', '--company',
-	    	type='str',
-		    prompt=True,
-		    help='The client company')
-@click.option('-n', '--email',
-	    	type='str',
-		    prompt=True,
-		    help='The client email')
-@click.option('-n', '--position',
-	    	type='str',
-		    prompt=True,
-		    help='The client position')
+              type=str,
+              prompt=True,
+              help='The client\'s name')
+@click.option('-c', '--company',
+              type=str,
+              prompt=True,
+              help='The client\'s name')
+@click.option('-e', '--email',
+              type=str,
+              prompt=True,
+              help='The client\'s name')
+@click.option('-p', '--position',
+              type=str,
+              prompt=True,
+              help='The client\'s name')
 @click.pass_context
 def create(ctx, name, company, email, position):
-	"""Creates a new client"""
-	client = Client(name, company, email, position)
-	client_service = ClientService(ctx.obj['clients_table'])
+    """Creates a new client"""
+    client_service = ClientService(ctx.obj['clients_table'])
+    client = Client(name, company, email, position)
 
-	client_service.create_client(client)
+    client_service.create_client(client)
+
 
 
 @clients.command()
