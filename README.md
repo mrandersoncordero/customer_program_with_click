@@ -1,4 +1,4 @@
-# Platzi Ventas
+# Customer program with click
 
 ## Commands
 
